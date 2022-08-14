@@ -18,11 +18,13 @@ const standButton = document.querySelector("#stand-button");
 
 dealButton.addEventListener("click",dealCards);
 
-hitButton.addEventListener("click",() => {
-  hitMe();
-  console.log("hi");
+hitButton.addEventListener("click", () => {
+  if (playerPoints < 21) {
+    hitMe();
+
   }
-);
+  else { alert("You can't hit once you've reached 21") }
+});
 
 standButton.addEventListener("click", () => {
   standLogic();
