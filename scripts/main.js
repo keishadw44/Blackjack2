@@ -167,7 +167,7 @@ function hitMe(playerType) {
         playerTempCard.pointValue = 11;
       }
       playerHand.push(playerTempCard);
-      playerHandContainer.innerHTML += `<img src=${playerHand[i].image} id=${playerHand[i].rank}_of_${playerHand[i].suit}>`;
+      playerHandContainer.innerHTML += `<img src=${playerHand[playerHand.length-1].image} id=${playerHand[playerHand.length-1].rank}_of_${playerHand[playerHand.length-1].suit}>`;
       calculatePoints('player');
     
   
@@ -176,7 +176,7 @@ function hitMe(playerType) {
         dealerTempCard.pointValue = 11;
       }
       dealerHand.push(dealerTempCard);
-      dealerHandContainer.innerHTML += `<img src=${dealerHand[i].image} id=${dealerHand[i].rank}_of_${dealerHand[i].suit}>`;
+      dealerHandContainer.innerHTML += `<img src=${dealerHand[dealerHand.length-1].image} id=${dealerHand[dealerHand.length-1].rank}_of_${dealerHand[dealerHand.length-1].suit}>`;
       calculatePoints('dealer');
     }
     showPoints('player', playerPoints);
@@ -202,7 +202,7 @@ function standLogic() {
       dealerTempCard = [];
       dealerTempCard = deck.pop();
       dealerHand.push(dealerTempCard);
-      dealerHandContainer.innerHTML += `<img src=${dealerHand[i].image} id=${dealerHand[i].rank}_of_${dealerHand[i].suit}>`;
+      dealerHandContainer.innerHTML += `<img src=${dealerHand[dealerHand.length-1].image} id=${dealerHand[dealerHand.length-1].rank}_of_${dealerHand[dealerHand.length-1].suit}>`;
       calculatePoints('dealer');
     }
     showPoints('dealer', dealerPoints);
@@ -224,13 +224,11 @@ function standLogic() {
         messages.innerHTML += `<h3>Player wins!</h3>`
       }
       else if (dealerPoints > playerPoints) {
-        console.log('ligma')
         messages.innerHTML += `<h3>Dealer wins!</h3>`;
       }
     }
   }
   else if (dealerPoints >= 17 && dealerPoints <= 21) {
-console.log('object')
     if (dealerPoints === playerPoints) {
       messages.innerHTML += `<h3>It's a tie!</h3>`;
 
@@ -239,7 +237,6 @@ console.log('object')
       messages.innerHTML += `<h3>Player wins!</h3>`;
     }
     else if (dealerPoints > playerPoints) {
-      console.log('ligma')
       messages.innerHtml += `<h3>Dealer wins!</h3>`;
     }
   }
