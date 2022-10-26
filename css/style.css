@@ -13,11 +13,11 @@ body * {
   margin: 0 auto 10px;
   height: 1em;
   font-size: 18px;
-  color: rgb(22, 77, 8);
+  color: rgb(39, 174, 6);
 }
 
 .message-box.error {
-  color: rgb(122, 0, 0)
+  color: rgb(245, 4, 4)
 }
 
 .table {
